@@ -716,6 +716,12 @@ void YApm::SysStr(char *s, bool Tool) {
             BATtime_remain = (int) (60 * (double)(BATcapacity_remain) / BATrate);
             sprintf(bat_info, "%d:%02d (%3.0f%%)", BATtime_remain / 60, BATtime_remain % 60,100 * (double)BATcapacity_remain / BATcapacity_full);
         }
+        else if (taskBarShowApmWatts)
+        {
+            sprintf(bat_info, "%0.0f W, %0.0f Wh ",
+                BATrate/1000000.0,
+                BATcapacity_remain/1000000.0);
+        }
         else if (BATpresent == BAT_PRESENT &&
                  //did we parse the needed values successfully?
                  BATcapacity_remain >= 0 && BATcapacity_full >= 0)
@@ -1090,9 +1096,11 @@ int YApm::calcInitialWidth() {
             continue;
         if (taskBarShowApmTime)
             strcat(buf, "0:00 0.0W");
+        else if (taskBarShowApmWatts)
+            strcat(buf, "00 W, 000 Wh ");
         else
             strcat(buf, "100%");
-        strcat(buf, "C");
+        strcat(buf, "CE");
         if (n > 0)
             strcat(buf, "/");
         n++;

@@ -42,6 +42,7 @@ XIV(bool, taskBarShowApm,                       false)
 XIV(bool, taskBarShowApmAuto,                   true)
 XIV(bool, taskBarShowApmTime,                   true) // mschy
 XIV(bool, taskBarShowApmGraph,                  true) // hatred
+XIV(bool, taskBarShowApmWatts,                  false)
 XIV(bool, taskBarShowMailboxStatus,             true)
 XIV(bool, taskBarShowStartMenu,                 true)
 XIV(bool, taskBarShowWindowListMenu,            true)
@@ -297,6 +298,7 @@ cfoption icewm_preferences[] = {
     OBV("TaskBarShowAPMAuto",                   &taskBarShowApmAuto,            "Enable TaskBarShowAPMStatus if a battery is present"),
     OBV("TaskBarShowAPMTime",                   &taskBarShowApmTime,            "Show APM status on task bar in time-format"),  // mschy
     OBV("TaskBarShowAPMGraph",                  &taskBarShowApmGraph,           "Show APM status in graph mode"), // hatred
+    OBV("TaskBarShowAPMWatts",                  &taskBarShowApmWatts,           "Show APM status as watts and watt hours"),
     OBV("TaskBarShowMailboxStatus",             &taskBarShowMailboxStatus,      "Show mailbox status on task bar"),
     OBV("TaskBarMailboxStatusBeepOnNewMail",    &beepOnNewMail,                 "Beep when new mail arrives"),
     OBV("TaskBarMailboxStatusCountMessages",    &countMailMessages,             "Count messages in mailbox"),
