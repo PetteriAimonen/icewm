@@ -1890,7 +1890,7 @@ bool YFrameClient::getNetWMUserTime(Window window, unsigned long &time) {
             long *utime = (long *) prop;
 
             MSG(("got user time"));
-            time = utime[0];
+            time = utime[0] & 0xFFFFFFFFUL;
 	    if (time == -1UL)
 		    time = -2UL;
 
